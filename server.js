@@ -21,3 +21,18 @@ app.listen(PORT, () => {
 	console.log('working now');
 });
 
+app.get('/shopify', (req, res) => {
+	const shop = req.query.shop;
+
+	if(shop) {
+			const state = nonce();
+			const redirectUri = forwarding_address;
+			const installURL = 'https://' + shop + '/admin/oauth/authorize?client_id=' + 
+			apiKey + '&scope=' + scopes + '&state' + state + '&redirect_uri' + redirectUri;
+
+			res.cookie('state', state);
+			res.redirect(installURL);
+	} else {
+		return res.status(404).send('Missing shop parameters');
+	}
+})
