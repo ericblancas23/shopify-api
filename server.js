@@ -6,9 +6,11 @@ const nonce = require('nonce');
 const querystring = require('querystring');
 const request = require('request');
 
+//added api key
 const apiKey = process.env.SHOPIFY_API;
 const apiSecret = process.env.SHOPIFY_API_SECRET;
 
+//added scopes
 const scopes = 'read products';
 const forwardingAddress = 'https://b48c30a1.ngrok.io'
 const PORT = process.env.PORT || 3000
