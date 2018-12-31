@@ -13,6 +13,7 @@ const scopes = 'read products';
 const forwardingAddress = 'https://b48c30a1.ngrok.io'
 const PORT = process.env.PORT || 3000
 
+//get testing route
 app.get('/', (req, res) => {
 	res.send('Testing');
 });
