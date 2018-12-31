@@ -17,10 +17,12 @@ app.get('/', (req, res) => {
 	res.send('Testing');
 });
 
+//port listening
 app.listen(PORT, () => {
 	console.log('working now');
 });
 
+//get shopify api
 app.get('/shopify', (req, res) => {
 	const shop = req.query.shop;
 
@@ -35,4 +37,4 @@ app.get('/shopify', (req, res) => {
 	} else {
 		return res.status(404).send('Missing shop parameters');
 	}
-})
+});
